@@ -1,0 +1,84 @@
+-- Supported values for orientation:
+-- portrait, portraitUpsideDown, landscapeLeft, landscapeRight
+
+settings = {
+	
+	orientation = {
+		default = "portrait",
+		supported = { "portrait", }
+	},
+	
+	iphone = {
+		plist = {
+			UIStatusBarHidden = false,
+			UIPrerenderedIcon = true, -- set to false for "shine" overlay
+			--UIApplicationExitsOnSuspend = true, -- uncomment to quit app on suspend
+
+            --[[
+            -- iOS app URL schemes:
+            CFBundleURLTypes =
+            {
+                {
+                    CFBundleURLSchemes =
+                    {
+                        "fbXXXXXXXXXXXXXX", -- example scheme for facebook
+                        "coronasdkapp", -- example second scheme
+                    }
+                }
+            }
+            --]]
+            UIAppFonts =
+            {
+                "04B_19__.TTF",
+            },
+            CFBundleIconFiles= {
+                    "Icon.png",
+                    "Icon@2x.png",
+                    "Icon-40.png",
+                    "Icon-40@2x.png",
+                    "Icon-40@3x.png",
+                    "Icon-60.png",
+                    "Icon-60@2x.png",
+                    "Icon-60@3x.png",
+                    "Icon-72.png",
+                    "Icon-72@2x.png",
+                    "Icon-76.png",
+                    "Icon-76@2x.png",
+                    "Icon-Small.png",
+                    "Icon-Small@2x.png",
+                    "Icon-Small@3x.png",
+                    "Icon-Small-50.png",
+                    "Icon-Small-50@2x.png",
+                },
+                --CFBundleIdentifier = "com.pqdapps.jumpforyourlife",
+            },
+	},
+
+	plugins =
+    {
+        ["CoronaProvider.ads.vungle"] =
+        {
+            publisherId = "com.vungle",
+        },
+        ["CoronaProvider.gameNetwork.apple"] =
+        {
+            publisherId = "com.coronalabs",
+            supportedPlatforms = { iphone=true, ["iphone-sim"]=true },
+        },
+        -- key is the name passed to Lua's 'require()'
+        ["CoronaProvider.ads.admob"] =
+        {
+            -- required
+            publisherId = "com.coronalabs",
+        },
+    },
+	
+	--[[
+	-- Android permissions
+
+	androidPermissions = {
+  		"android.permission.INTERNET",
+  	},
+
+	]]--
+}
