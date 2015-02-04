@@ -23,10 +23,17 @@ local playBtn -- Play button
 local leaderboardsBtn --Opens up gamecenter
 local settingsBtn --Shows settings options
 
+--Setting menu buttons
+local rateAppBtn
+local muteMusicBtn
+local muteSFXBtn
+
 --In game display objects
 local pauseBtn
 local score = 0 --Saves the score
 local scoreText --Text that displays the score
+local multiplier = 1 --Multiplier for score
+local multiplierText --Text that displays multiplier
 
 --Game objects
 local ball
